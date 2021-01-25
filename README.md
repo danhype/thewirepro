@@ -18,10 +18,14 @@ Feel free to drop a recommendation if you found this helpful
 
 Release notes :
 
-Cette mouture de ce module est un fork de cette [version originale](http://learn.elgg.org/en/stable/intro/install.html#overview)
+v1.3.1 by Dan d'Auge
+
+Cette mouture de ce module est un fork de cette [version originale](https://github.com/physcocode/the-wire-pro)
 
 - Suppression de la fonction stringToEmoji qui pose problème sur certaine URL
 - Intégration des formulaires de Wire Tools afin de rendre compatible le module avec la publication dans les gropupes
+- Rajout de boutons pour publier directement des blogs ou vidéo (izap)
+- Traduction en langue française
 
 
 ### Versions originales :
