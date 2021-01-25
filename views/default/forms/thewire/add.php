@@ -81,18 +81,42 @@ $submit_button = elgg_view_field([
 	'id' => 'thewire-submit-button',
 ]);
 
+$container_guid = elgg_get_page_owner_guid();
+$group = get_entity($container_guid);
+
+$izab_link = elgg_view('output/url', [
+		'href' => elgg_generate_url('add:object:izap_videos', [
+			'guid' => $group->guid,
+		]),
+		'text' => elgg_echo('<span class="elgg-icon elgg-icon-plus elgg-anchor-icon fas fa-video"></span>'),
+		'is_trusted' => true,
+        'class' => 'plusvideos',
+	]);
+
+$blog_link = elgg_view('output/url', [
+		'href' => elgg_generate_url('add:object:blog', [
+			'guid' => $group->guid,
+		]),
+		'text' => elgg_echo('<span class="elgg-icon elgg-icon-plus elgg-anchor-icon fas fa-edit"></span>'),
+		'is_trusted' => true,
+        'class' => 'plusblogs',
+	]);
+
 echo $reshare_input;
 echo $post_input;
 echo elgg_format_element('div', ['id' => 'thewire-characters-remaining'], $count_down);
+
 
 $footer = elgg_view_field([
 	'#type' => 'fieldset',
 	'align' => 'horizontal',
 	'fields' => [
 		[
-			'#html' => $parent_input . $submit_button . $container_input . $access_input,
+			'#html' => $parent_input . $submit_button . $container_input . $access_input . $izab_link . $blog_link,
 		]
 	],
 ]);
 
 elgg_set_form_footer($footer);
+
+
